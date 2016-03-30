@@ -14,18 +14,34 @@ Find the offset parent of a DOM element
 
 ## Usage
 
+The offset parent of a given element is the first parent up the tree that is positioned `absolute`, `relative`, or `fixed`.
+
 ```js
 var offsetParent = require('@f/offset-parent')
+
+function position (node, placement) {
+  var parent = offsetParent(node)
+
+  node.style.left = (parent.offsetWidth / 2) - (node.offsetWidth / 2) + 'px'
+  switch (placement) {
+    case 'top':
+      node.style.top = -node.offsetHeight + 'px'
+      break
+    case 'bottom':
+      node.style.bottom = '0px'
+      break
+  }
+}
 
 ```
 
 ## API
 
-### offsetParent(arg)
+### offsetParent(node)
 
-- `arg` -
+- `node` - The DOM node who's offsetParent you want to find
 
-**Returns:**
+**Returns:** The first node above `node` that is positioned `absolute`, `relative`, or `fixed`.
 
 ## License
 
