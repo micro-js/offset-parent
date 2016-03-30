@@ -2,7 +2,7 @@
   "name": "@f/offset-parent",
   "description": "Find the offset parent of a DOM element",
   "repository": "git://github.com/micro-js/offset-parent.git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
