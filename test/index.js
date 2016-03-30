@@ -13,6 +13,10 @@ test('should work', function (t) {
   var rootNode = $('<div style="position: relative"><div><div id="child"></div></div></div>')
 
   t.equal(rootNode, offsetParent($('#child')))
+
+  $('<div id="child"></div>')
+  t.equal(document.body, offsetParent($('#child')))
+
   t.end()
 })
 
